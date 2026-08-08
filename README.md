@@ -7,9 +7,10 @@ onto a grid, and read off the numbers your engine actually needs — tile size, 
 texture origin, footprint in cells. Nothing is uploaded anywhere; everything runs
 locally in the browser — it is a single HTML file you can just double-click.
 
-It is meant as a shared workspace for artists and developers: artists validate their
-assets before sending them, developers get the settings the artist used, ready for the
-engine.
+It is meant as a common tool sitting between the artistic and the logical side of a
+project: artists validate their assets before sending them, developers get the settings
+the artist used, ready for the engine. There is no shared session or server involved —
+each side runs the same tool and the scene JSON is what travels between them.
 
 **▶ [Open Iso Sandbox](https://domdom3333.github.io/Iso-Sandbox)**
 
@@ -17,15 +18,15 @@ engine.
 
 ## Why
 
-Iso Sandbox exists to be a **common interface between artists and developers**, and to cut
-down the back-and-forth between them.
+Iso Sandbox exists to be a **common tool acting as an interface between the artistic and
+the logical department**, and to cut down the back-and-forth between them.
 
 Isometric art usually looks wrong the first time it lands in an engine: a tree is two
 pixels too tall, a wall does not line up with the floor, a rock is anchored to the wrong
 corner. That normally costs a round trip — the artist sends the asset, the developer wires
 it up, something is off, and it goes back again.
 
-With Iso Sandbox both sides work from the same page:
+With Iso Sandbox both departments use the same tool and speak in the same numbers:
 
 - **Artists** can drop their assets onto a real grid and check sizing, anchoring and
   footprint *before* sending anything over — no engine, no build, no developer needed.
