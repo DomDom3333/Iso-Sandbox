@@ -13,14 +13,15 @@ locally in the browser.
 
 ## Why
 
+Iso Sandbox is a common tool between the art and the dev side, meant to cut down the
+back-and-forth between them.
+
 Isometric art usually looks wrong the first time it lands in an engine: a tree is two
 pixels too tall, a wall does not line up with the floor, a rock is anchored to the wrong
-corner. Figuring out the right `tile_size`, `scale` and `texture_origin` by editing a
-scene file and re-running the game is slow.
+corner.
 
-Iso Sandbox lets you nudge those values with sliders, see the result immediately on a
-shared grid next to your other assets, and then copy the resulting numbers into your
-project.
+- **Artists** test their assets on a real grid before sending them.
+- **Developers** get the settings the artist used, ready to drop into the engine.
 
 ## Features
 
@@ -42,16 +43,9 @@ project.
 
 ## Usage
 
-Open the [hosted version](https://domdom3333.github.io/Iso-Sandbox), or run it locally:
-
-```bash
-git clone https://github.com/DomDom3333/Iso-Sandbox.git
-cd Iso-Sandbox
-# open index.html in a browser, or serve it:
-python3 -m http.server 8000   # then visit http://localhost:8000
-```
-
-There is no build step and no dependencies — `index.html` is the whole application.
+Open the [hosted version](https://domdom3333.github.io/Iso-Sandbox), or download
+`index.html` and double-click it. No build step, no dependencies — that one file is the
+whole application.
 
 Then:
 
