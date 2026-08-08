@@ -1,0 +1,16 @@
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local scratch work
+node_modules/
+*.log
+/tmp/
+iso-scene*.json
