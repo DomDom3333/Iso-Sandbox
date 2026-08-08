@@ -5,12 +5,7 @@ A single-file, browser-based scratchpad for checking isometric art against a til
 Drop your PNGs onto the page, tell it what tile size they were drawn for, paint them
 onto a grid, and read off the numbers your engine actually needs — tile size, scale,
 texture origin, footprint in cells. Nothing is uploaded anywhere; everything runs
-locally in the browser — it is a single HTML file you can just double-click.
-
-It is meant as a common tool sitting between the artistic and the logical side of a
-project: artists validate their assets before sending them, developers get the settings
-the artist used, ready for the engine. There is no shared session or server involved —
-each side runs the same tool and the scene JSON is what travels between them.
+locally in the browser.
 
 **▶ [Open Iso Sandbox](https://domdom3333.github.io/Iso-Sandbox)**
 
@@ -18,23 +13,15 @@ each side runs the same tool and the scene JSON is what travels between them.
 
 ## Why
 
-Iso Sandbox exists to be a **common tool acting as an interface between the artistic and
-the logical department**, and to cut down the back-and-forth between them.
+Iso Sandbox is a common tool between the art and the dev side, meant to cut down the
+back-and-forth between them.
 
 Isometric art usually looks wrong the first time it lands in an engine: a tree is two
 pixels too tall, a wall does not line up with the floor, a rock is anchored to the wrong
-corner. That normally costs a round trip — the artist sends the asset, the developer wires
-it up, something is off, and it goes back again.
+corner.
 
-With Iso Sandbox both departments use the same tool and speak in the same numbers:
-
-- **Artists** can drop their assets onto a real grid and check sizing, anchoring and
-  footprint *before* sending anything over — no engine, no build, no developer needed.
-- **Developers** get the exact settings the artist landed on — `tile_size`, `scale`,
-  `texture_origin`, footprint in cells — as JSON they can feed straight into the engine,
-  instead of re-deriving them by eye.
-
-Same file, same numbers, one hand-off instead of five.
+- **Artists** test their assets on a real grid before sending them.
+- **Developers** get the settings the artist used, ready to drop into the engine.
 
 ## Features
 
@@ -56,23 +43,9 @@ Same file, same numbers, one hand-off instead of five.
 
 ## Usage
 
-Open the [hosted version](https://domdom3333.github.io/Iso-Sandbox), or grab
-`index.html` and **double-click it** — it opens straight in your browser. That is the
-whole install. There is no build step, no dependencies and no server required;
-`index.html` is the entire application.
-
-```bash
-git clone https://github.com/DomDom3333/Iso-Sandbox.git
-cd Iso-Sandbox
-# double-click index.html, or open it from the browser's File > Open
-```
-
-If you would rather serve it over `http://` (handy for sharing it on a LAN, or if your
-browser is locked down about `file://` pages), any static server works:
-
-```bash
-python3 -m http.server 8000   # then visit http://localhost:8000
-```
+Open the [hosted version](https://domdom3333.github.io/Iso-Sandbox), or download
+`index.html` and double-click it. No build step, no dependencies — that one file is the
+whole application.
 
 Then:
 
