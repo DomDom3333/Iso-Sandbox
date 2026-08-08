@@ -5,7 +5,11 @@ A single-file, browser-based scratchpad for checking isometric art against a til
 Drop your PNGs onto the page, tell it what tile size they were drawn for, paint them
 onto a grid, and read off the numbers your engine actually needs — tile size, scale,
 texture origin, footprint in cells. Nothing is uploaded anywhere; everything runs
-locally in the browser.
+locally in the browser — it is a single HTML file you can just double-click.
+
+It is meant as a shared workspace for artists and developers: artists validate their
+assets before sending them, developers get the settings the artist used, ready for the
+engine.
 
 **▶ [Open Iso Sandbox](https://domdom3333.github.io/Iso-Sandbox)**
 
@@ -13,14 +17,23 @@ locally in the browser.
 
 ## Why
 
+Iso Sandbox exists to be a **common interface between artists and developers**, and to cut
+down the back-and-forth between them.
+
 Isometric art usually looks wrong the first time it lands in an engine: a tree is two
 pixels too tall, a wall does not line up with the floor, a rock is anchored to the wrong
-corner. Figuring out the right `tile_size`, `scale` and `texture_origin` by editing a
-scene file and re-running the game is slow.
+corner. That normally costs a round trip — the artist sends the asset, the developer wires
+it up, something is off, and it goes back again.
 
-Iso Sandbox lets you nudge those values with sliders, see the result immediately on a
-shared grid next to your other assets, and then copy the resulting numbers into your
-project.
+With Iso Sandbox both sides work from the same page:
+
+- **Artists** can drop their assets onto a real grid and check sizing, anchoring and
+  footprint *before* sending anything over — no engine, no build, no developer needed.
+- **Developers** get the exact settings the artist landed on — `tile_size`, `scale`,
+  `texture_origin`, footprint in cells — as JSON they can feed straight into the engine,
+  instead of re-deriving them by eye.
+
+Same file, same numbers, one hand-off instead of five.
 
 ## Features
 
@@ -42,16 +55,23 @@ project.
 
 ## Usage
 
-Open the [hosted version](https://domdom3333.github.io/Iso-Sandbox), or run it locally:
+Open the [hosted version](https://domdom3333.github.io/Iso-Sandbox), or grab
+`index.html` and **double-click it** — it opens straight in your browser. That is the
+whole install. There is no build step, no dependencies and no server required;
+`index.html` is the entire application.
 
 ```bash
 git clone https://github.com/DomDom3333/Iso-Sandbox.git
 cd Iso-Sandbox
-# open index.html in a browser, or serve it:
-python3 -m http.server 8000   # then visit http://localhost:8000
+# double-click index.html, or open it from the browser's File > Open
 ```
 
-There is no build step and no dependencies — `index.html` is the whole application.
+If you would rather serve it over `http://` (handy for sharing it on a LAN, or if your
+browser is locked down about `file://` pages), any static server works:
+
+```bash
+python3 -m http.server 8000   # then visit http://localhost:8000
+```
 
 Then:
 
